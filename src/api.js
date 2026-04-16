@@ -2,16 +2,11 @@ import axios from 'axios';
 
 /*
 |--------------------------------------------------------------------------
-| API BASE URL (FROM .ENV)
-|--------------------------------------------------------------------------
-| - Uses VITE_API_BASE_URL from environment
-| - Falls back to default if not set
-|--------------------------------------------------------------------------
+| API BASE URL (FROM ENV)
+|-------------------------------------------------------------------------- 
 */
 
-const BASE_URL =
-  import.meta.env.VITE_API_BASE_URL ||
-  'https://api.jadhavarcollegeoflaw.com/api';
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 // Create axios instance
 const API = axios.create({
@@ -19,9 +14,8 @@ const API = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
-  timeout: 30000,
+  timeout: 70000,
 });
-
 /*
 |--------------------------------------------------------------------------
 | REQUEST INTERCEPTOR – ADD JWT TOKEN
@@ -88,30 +82,6 @@ export const adminAPI = {
 
 /*
 |--------------------------------------------------------------------------
-| GALLERY API
-|--------------------------------------------------------------------------
-*/
-export const galleryAPI = {
-  getAll: () => API.get('/gallery'),
-  getById: (id) => API.get(`/gallery/${id}`),
-
-  create: (formData) =>
-    API.post('/gallery', formData, {
-      headers: { 'Content-Type': 'multipart/form-data' },
-    }),
-
-  update: (id, formData) =>
-    API.put(`/gallery/${id}`, formData, {
-      headers: { 'Content-Type': 'multipart/form-data' },
-    }),
-
-  delete: (id) => API.delete(`/gallery/${id}`),
-
-  getAllAdmin: () => API.get('/gallery/admin/all'),
-};
-
-/*
-|--------------------------------------------------------------------------
 | ADMISSION API
 |--------------------------------------------------------------------------
 */
@@ -120,8 +90,41 @@ export const admissionAPI = {
   getAll: () => API.get('/admission/all'),
   getById: (id) => API.get(`/admission/${id}`),
   getExcelData: () => API.get('/admission/excel-data'),
-  downloadExcel: () =>
-    API.get('/admission/download-excel', { responseType: 'blob' }),
+  downloadExcel: () => API.get('/admission/download-excel', { responseType: 'blob' }),
+};
+
+/*
+|--------------------------------------------------------------------------
+| CAREER API
+|--------------------------------------------------------------------------
+*/
+export const careerAPI = {
+  getAll: () => API.get("/careers"),
+  getById: (id) => API.get(`/careers/${id}`),
+  create: (data) => API.post("/careers", data),
+  update: (id, data) => API.put(`/careers/${id}`, data),
+  delete: (id) => API.delete(`/careers/${id}`),
+  getAllAdmin: () => API.get("/careers/admin/all"),
+};
+
+/*
+|--------------------------------------------------------------------------
+| GALLERY API
+|--------------------------------------------------------------------------
+*/
+export const galleryAPI = {
+  getAll: () => API.get('/gallery'),
+  getById: (id) => API.get(`/gallery/${id}`),
+  create: (formData) =>
+    API.post('/gallery', formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    }),
+  update: (id, formData) =>
+    API.put(`/gallery/${id}`, formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    }),
+  delete: (id) => API.delete(`/gallery/${id}`),
+  getAllAdmin: () => API.get('/gallery/admin/all'),
 };
 
 /*
@@ -137,56 +140,8 @@ export const announcementAPI = {
   delete: (id) => API.delete(`/announcements/${id}`),
   getAllAdmin: () => API.get('/announcements/admin/all'),
 };
+// Add this to your api.js file after the galleryAPI section
 
-/*
-|--------------------------------------------------------------------------
-| CAREER API
-|--------------------------------------------------------------------------
-*/
-export const careerAPI = {
-  getAll: () => API.get('/careers'),
-  getById: (id) => API.get(`/careers/${id}`),
-
-  create: (data) => {
-    const formattedData = {
-      ...data,
-      requirements: Array.isArray(data.requirements)
-        ? data.requirements
-        : data.requirements
-        ? [data.requirements]
-        : [],
-      responsibilities: Array.isArray(data.responsibilities)
-        ? data.responsibilities
-        : data.responsibilities
-        ? [data.responsibilities]
-        : [],
-      applicationDeadline: new Date(data.applicationDeadline).toISOString(),
-    };
-    return API.post('/careers', formattedData);
-  },
-
-  update: (id, data) => {
-    const formattedData = {
-      ...data,
-      requirements: Array.isArray(data.requirements)
-        ? data.requirements
-        : data.requirements
-        ? [data.requirements]
-        : [],
-      responsibilities: Array.isArray(data.responsibilities)
-        ? data.responsibilities
-        : data.responsibilities
-        ? [data.responsibilities]
-        : [],
-      applicationDeadline: new Date(data.applicationDeadline).toISOString(),
-    };
-    return API.put(`/careers/${id}`, formattedData);
-  },
-
-  delete: (id) => API.delete(`/careers/${id}`),
-
-  getAllAdmin: () => API.get('/careers/admin/all'),
-};
 
 /*
 |--------------------------------------------------------------------------
@@ -207,9 +162,19 @@ export const blogAPI = {
       headers: { 'Content-Type': 'multipart/form-data' },
     }),
 
+  // ✅ FIXED ADMIN DELETE ROUTE
   remove: (id) => API.delete(`/blogs/admin/${id}`),
 
   getAllAdmin: () => API.get('/blogs/admin/all'),
+};
+
+/*
+|--------------------------------------------------------------------------
+| CONTACT API
+|--------------------------------------------------------------------------
+*/
+export const contactAPI = {
+  send: (data) => API.post("/contact", data),
 };
 
 /*
