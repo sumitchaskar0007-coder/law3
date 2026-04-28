@@ -83,6 +83,7 @@ const Career = () => {
       </header>
 
       <main className="max-w-7xl mx-auto px-4 py-8">
+<<<<<<< HEAD
         {/* Career Opportunities */}
         <section className="mb-12 bg-white rounded-3xl shadow-lg p-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Career Opportunities after 3-Year LL.B.</h2>
@@ -228,6 +229,8 @@ const Career = () => {
           </div>
         </section>
 
+=======
+>>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
         {/* Stats */}
         <div className="mb-8 text-center">
           <h2 className="text-3xl font-bold text-gray-800 mb-2">

@@ -73,7 +73,10 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/cells" element={<Cells />} />
             <Route path="/facilities" element={<Facilities />} />
+<<<<<<< HEAD
             <Route path="/campus-life" element={<Facilities />} />
+=======
+>>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
             <Route path="/udan/:id" element={<UdanBook />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blogs/:id" element={<BlogDetail />} />

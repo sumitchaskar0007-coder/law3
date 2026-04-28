@@ -42,7 +42,11 @@ export default function HeroSection() {
       className="md:w-1/2 space-y-5"
     >
       <p className="text-sm font-semibold uppercase tracking-wider text-yellow-300">
+<<<<<<< HEAD
         Bar Council of India Approved
+=======
+        NAAC A+ Accredited • Bar Council of India Approved
+>>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
       </p>
 
       <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
@@ -56,9 +60,15 @@ export default function HeroSection() {
       </p>
 
       <div className="flex flex-wrap gap-4 pt-2">
+<<<<<<< HEAD
         <Link to="/admissions">
   <button className="bg-yellow-400 text-black px-6 py-3 rounded-md font-semibold hover:bg-yellow-300 transition shadow-md">
     Apply Now
+=======
+        <Link to="/contact">
+  <button className="bg-yellow-400 text-black px-6 py-3 rounded-md font-semibold hover:bg-yellow-300 transition shadow-md">
+    Apply for LL.B 2026
+>>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
   </button>
 </Link>
 
@@ -310,7 +320,11 @@ export default function HeroSection() {
 
 <section className="w-full bg-gray-50 py-16">
   <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+<<<<<<< HEAD
 <div className="bg-white p-8 rounded-xl shadow hover:shadow-lg transition text-justify">
+=======
+<div className="bg-white p-8 rounded-xl shadow hover:shadow-lg transition">
+>>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
   <h3 className="text-2xl font-bold mb-3 flex items-center gap-2">
     🎯 Vision
   </h3>
@@ -334,7 +348,11 @@ export default function HeroSection() {
 </div>
 
 
+<<<<<<< HEAD
     <div className="bg-white p-8 rounded-xl shadow hover:shadow-lg transition text-justify">
+=======
+    <div className="bg-white p-8 rounded-xl shadow hover:shadow-lg transition">
+>>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
   <h3 className="text-2xl font-bold mb-3 flex items-center gap-2">
     🚀 Mission
   </h3>
@@ -538,8 +556,13 @@ export default function HeroSection() {
   <div className="max-w-7xl mx-auto px-6 text-center">
 
     <h2 className="text-3xl md:text-4xl font-bold mb-12">
+<<<<<<< HEAD
       Why Choose Jadhavar
       <br /> College of Law?
+=======
+      Why Choose Adv. Shardulrao Sudhakarrao
+      <br /> Jadhavar College of Law?
+>>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
     </h2>
 
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

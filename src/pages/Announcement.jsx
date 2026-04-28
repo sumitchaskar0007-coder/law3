@@ -13,6 +13,7 @@ const Announcement = () => {
   const fetchAnnouncements = async () => {
     try {
       const response = await announcementAPI.getAll();
+<<<<<<< HEAD
       const fetchedAnnouncements = Array.isArray(response.data?.data)
         ? response.data.data
         : Array.isArray(response.data)
@@ -22,14 +23,25 @@ const Announcement = () => {
     } catch (error) {
       console.error('Error fetching announcements:', error);
       setAnnouncements([]);
+=======
+      setAnnouncements(response.data.data);
+    } catch (error) {
+      console.error('Error fetching announcements:', error);
+>>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
     } finally {
       setLoading(false);
     }
   };
 
+<<<<<<< HEAD
   const filteredAnnouncements = filter === 'all'
     ? announcements
     : announcements.filter((announcement) => announcement.type === filter);
+=======
+  const filteredAnnouncements = filter === 'all' 
+    ? announcements 
+    : announcements.filter(announcement => announcement.type === filter);
+>>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
 
   const getTypeBadgeClass = (type) => {
     switch (type) {
@@ -37,19 +49,25 @@ const Announcement = () => {
         return 'bg-red-100 text-red-800';
       case 'event':
         return 'bg-blue-100 text-blue-800';
+<<<<<<< HEAD
       case 'general':
         return 'bg-yellow-100 text-yellow-800';
+=======
+>>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
       default:
         return 'bg-gray-100 text-gray-800';
     }
   };
 
+<<<<<<< HEAD
   const formatDate = (value) => {
     if (!value) return 'N/A';
     const date = new Date(value);
     return Number.isNaN(date.getTime()) ? 'N/A' : date.toLocaleDateString();
   };
 
+=======
+>>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
   if (loading) {
     return <div>Loading announcements...</div>;
   }
@@ -108,7 +126,11 @@ const Announcement = () => {
                         {announcement.type}
                       </span>
                       <span className="text-gray-500 text-sm">
+<<<<<<< HEAD
                         Posted: {formatDate(announcement.createdAt)}
+=======
+                        Posted: {new Date(announcement.createdAt).toLocaleDateString()}
+>>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
                       </span>
                     </div>
                   </div>
@@ -119,6 +141,7 @@ const Announcement = () => {
                 </div>
 
                 <div className="mt-4 pt-4 border-t text-sm text-gray-500">
+<<<<<<< HEAD
                   <div className="flex flex-col sm:flex-row sm:justify-between gap-2">
                     <span>
                       Valid from: {formatDate(announcement.startDate)}
@@ -126,6 +149,15 @@ const Announcement = () => {
                     {announcement.endDate && (
                       <span>
                         Until: {formatDate(announcement.endDate)}
+=======
+                  <div className="flex justify-between">
+                    <span>
+                      Valid from: {new Date(announcement.startDate).toLocaleDateString()}
+                    </span>
+                    {announcement.endDate && (
+                      <span>
+                        Until: {new Date(announcement.endDate).toLocaleDateString()}
+>>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
                       </span>
                     )}
                   </div>

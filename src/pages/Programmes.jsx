@@ -13,8 +13,13 @@ export default function Programmes({ onEnquiryClick }) {
 			<h1 className="text-3xl font-bold">Academic Programmes</h1>
 			<p className="mt-3 max-w-3xl">Our programmes blend doctrinal learning with clinical exposure through moots, internships and legal aid.</p>
 			<div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 mt-6">
+<<<<<<< HEAD
 				<ProgramCard title="B.A. LL.B (5 years)" duration="5 years" description="Integrated honours degree with clinical internships and moot courts." href="/admissions" />
 				<ProgramCard title="LL.B (3 years)" duration="3 years" description="Intensive professional program for graduates." href="/admissions" />
+=======
+				<ProgramCard title="B.A. LL.B (5 years)" duration="5 years" description="Integrated honours degree with clinical internships and moot courts." onEnquire={onEnquiryClick} />
+				<ProgramCard title="LL.B (3 years)" duration="3 years" description="Intensive professional program for graduates." onEnquire={onEnquiryClick} />
+>>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
 				<ProgramCard title="LL.M (1–2 years)" duration="1–2 years" description="Specializations include Constitutional, Corporate, Criminal Justice, Human Rights." onEnquire={onEnquiryClick} />
 				<ProgramCard title="Certificate: Cyber Law" duration="6 months" description="Foundations of cybercrime, IT Act, and compliance." onEnquire={onEnquiryClick} />
 				<ProgramCard title="Certificate: IPR" duration="6 months" description="Patents, trademarks, copyrights, and enforcement." onEnquire={onEnquiryClick} />

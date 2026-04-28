@@ -5,8 +5,11 @@ import {
   FaInstagram,
   FaLinkedinIn,
   FaYoutube,
+<<<<<<< HEAD
   FaPinterestP,
   FaGoogle,
+=======
+>>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
   FaMapMarkerAlt,
   FaPhoneAlt,
   FaEnvelope,
@@ -44,12 +47,20 @@ export default function Footer() {
 
           <p className="text-sm flex items-center gap-2 mt-2">
             <FaPhoneAlt className="text-primary" />
+<<<<<<< HEAD
             +91 84465 38995
+=======
+            +91 9284 246664
+>>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
           </p>
 
           <p className="text-sm flex items-center gap-2 mt-2">
             <FaEnvelope className="text-primary" />
+<<<<<<< HEAD
             jadhavarlawadmission@gmail.com
+=======
+            adityajadhavarlaw@gmail.com
+>>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
           </p>
         </div>
 
@@ -149,6 +160,7 @@ export default function Footer() {
             </a>
 
             <a
+<<<<<<< HEAD
               href="https://in.pinterest.com/jadhavarinstitute/jadhavar-college-of-law-pune/"
               target="_blank"
               rel="noopener noreferrer"
@@ -166,6 +178,15 @@ export default function Footer() {
               aria-label="Google My Business"
             >
               <FaGoogle />
+=======
+              href="https://www.youtube.com/channel/UCzcw8CD0OJbsQaj9IpDAKZQ"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="h-9 w-9 rounded-full bg-gray-800 hover:bg-primary flex items-center justify-center transition"
+              aria-label="YouTube"
+            >
+              <FaYoutube />
+>>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
             </a>
           </div>
 

@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Helmet } from 'react-helmet-async'
+<<<<<<< HEAD
 import {
+=======
+import { 
+>>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
   GraduationCap,
   Shield,
   Quote,
@@ -10,6 +14,11 @@ import {
   Users,
   BookOpen,
   Target,
+<<<<<<< HEAD
+=======
+  Eye,
+  MessageSquare,
+>>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
   UserCheck,
   Building,
   Globe,
@@ -59,7 +68,11 @@ export default function About() {
 
   const leadership = [
     {
+<<<<<<< HEAD
       name: "Dr. Jadhavar",
+=======
+      name: "Dr. Sudhakarrao Jadhavar",
+>>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
       position: "President & Founder",
       qualification: "M.Com, M.A., L.L.M., M.P.M., D.T.L., D.L.L.&L.W., G.D.C.&A., Ph.D.",
       experience: "25+ years in Educational Leadership",
@@ -74,9 +87,15 @@ export default function About() {
       color: "from-blue-600 to-purple-700"
     },
     {
+<<<<<<< HEAD
       name: "Adv. Jadhavar",
       position: "Vice President",
       qualification: "MBA, PGD-HRM, M.Com, D.H.R & L.D.C.L, D.C.P.L, A.P.C.L, C.MED, D.L.L & L.W., LL.M.",
+=======
+      name: "Adv. Shardulrao Sudhakarrao Jadhavar",
+      position: "Vice President",
+      qualification: "M.B.A., P.G.D.H.R.M., B.Com., D.H.R.&L., D.C.L., D.CP.L., APCL, DIPL, CMED, D.LL&L.W., L.L.M.",
+>>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
       experience: "15+ years in Legal Education",
       image: "/assets/images/about2.png",
       achievements: [
@@ -95,14 +114,22 @@ export default function About() {
       title: "President's Message",
       icon: <Users className="h-8 w-8" />,
       content: "At Jadhavar Law College, we believe in transforming students into competent legal professionals equipped to handle contemporary legal challenges. Our 3-year LLB program is designed to provide comprehensive legal education with practical exposure.",
+<<<<<<< HEAD
       author: "Dr. Jadhavar",
+=======
+      author: "Dr. Sudhakarrao Jadhavar",
+>>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
       color: "bg-gradient-to-br from-blue-500 to-blue-700"
     },
     {
       title: "Vice President's Message",
       icon: <Scale className="h-8 w-8" />,
       content: "We focus on developing critical thinking, research skills, and ethical values. Our curriculum is regularly updated to incorporate emerging areas of law and technological advancements in the legal field.",
+<<<<<<< HEAD
       author: "Adv. Jadhavar",
+=======
+      author: "Adv. Shardulrao Sudhakarrao Jadhavar",
+>>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
       color: "bg-gradient-to-br from-green-500 to-green-700"
     },
     {
@@ -138,6 +165,46 @@ export default function About() {
     }
   ]
 
+<<<<<<< HEAD
+=======
+  const visionMission = [
+    {
+      title: "Vision",
+      icon: <Eye className="h-6 w-6" />,
+      points: [
+        "To be a premier institution for legal education",
+        "Produce socially responsible legal professionals",
+        "Promote justice, equity, and good conscience",
+        "Contribute to legal research and reforms"
+      ],
+      color: "border-blue-200 bg-blue-50"
+    },
+    {
+      title: "Mission",
+      icon: <Target className="h-6 w-6" />,
+      points: [
+        "Impart quality legal education with ethical values",
+        "Develop analytical and critical thinking skills",
+        "Provide exposure to practical aspects of law",
+        "Foster research and innovation in legal studies"
+      ],
+      color: "border-green-200 bg-green-50"
+    },
+    {
+      title: "Objectives",
+      icon: <CheckCircle className="h-6 w-6" />,
+      points: [
+        "Comprehensive understanding of legal principles",
+        "Development of professional skills",
+        "Promotion of social justice awareness",
+        "Preparation for legal practice and judiciary"
+      ],
+      color: "border-purple-200 bg-purple-50"
+    }
+  ]
+
+  
+>>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 }
@@ -250,6 +317,43 @@ export default function About() {
               </p>
             </div>
 
+<<<<<<< HEAD
+=======
+            {/* Vision, Mission & Objectives Cards */}
+            <div className="grid md:grid-cols-3 gap-6 mb-12 items-stretch">
+  {visionMission.map((item, index) => (
+    <motion.div
+      key={index}
+      variants={fadeInUp}
+      className={`rounded-xl p-6 border-2 ${item.color} hover:shadow-lg transition-all duration-300 h-full flex flex-col`}
+    >
+      {/* Icon */}
+      <div className="inline-flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-md mb-4">
+        <div className="text-blue-600">
+          {item.icon}
+        </div>
+      </div>
+
+      {/* Title */}
+      <h3 className="text-lg font-bold text-gray-900 mb-3">
+        {item.title}
+      </h3>
+
+      {/* Points */}
+      <ul className="space-y-2 flex-1">
+        {item.points.map((point, idx) => (
+          <li key={idx} className="flex items-start text-sm">
+            <ChevronRight className="h-4 w-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
+            <span className="text-gray-700">{point}</span>
+          </li>
+        ))}
+      </ul>
+    </motion.div>
+  ))}
+</div>
+
+
+>>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
             {/* Program Highlights */}
             <div className="mb-12">
               <h3 className="text-xl font-bold text-center text-gray-900 mb-8">
