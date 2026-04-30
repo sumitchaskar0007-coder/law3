@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { blogAPI } from '../api';
+import { blogAPI, getMediaUrl } from '../api';
 import { 
   FacebookShareButton, 
   TwitterShareButton, 
@@ -155,7 +155,7 @@ export default function BlogDetail() {
           <div className="relative w-full flex justify-center bg-gray-100">
             <div className="relative w-full max-w-4xl h-[70vh] min-h-[500px] max-h-[800px] overflow-hidden">
               <img
-                src={`https://api.jadhavarcollegeoflaw.com${blog.coverImage}`}
+                src={getMediaUrl(blog.coverImage)}
                 alt={blog.title}
                 className="w-full h-full object-cover object-center"
               />

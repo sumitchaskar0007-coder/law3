@@ -6,11 +6,29 @@ import axios from 'axios';
 |-------------------------------------------------------------------------- 
 */
 
-const BASE_URL = import.meta.env.VITE_API_URL;
+const DEFAULT_API_ORIGIN = 'https://api.jadhavarcollegeoflaw.com';
+
+export const API_URL = (
+  import.meta.env.VITE_API_URL ||
+  import.meta.env.VITE_API_BASE_URL ||
+  `${DEFAULT_API_ORIGIN}/api`
+).replace(/\/+$/, '');
+
+export const API_ORIGIN = (
+  import.meta.env.VITE_API_ORIGIN ||
+  API_URL.replace(/\/api\/?$/, '') ||
+  DEFAULT_API_ORIGIN
+).replace(/\/+$/, '');
+
+export const getMediaUrl = (path) => {
+  if (!path) return '';
+  if (/^https?:\/\//i.test(path)) return path;
+  return `${API_ORIGIN}${path.startsWith('/') ? '' : '/'}${path}`;
+};
 
 // Create axios instance
 const API = axios.create({
-  baseURL: BASE_URL,
+  baseURL: API_URL,
   headers: {
     'Content-Type': 'application/json',
   },

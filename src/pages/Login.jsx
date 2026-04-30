@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import API from '../api';
 import './Auth.css';
-
-const API_URL = 'http://localhost:5000/api';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -27,7 +25,7 @@ const Login = () => {
 
     try {
       const endpoint = isLogin ? '/auth/login' : '/auth/register';
-      const response = await axios.post(`${API_URL}${endpoint}`, formData);
+      const response = await API.post(endpoint, formData);
       
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('user', JSON.stringify(response.data.user));

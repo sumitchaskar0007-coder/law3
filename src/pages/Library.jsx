@@ -90,21 +90,13 @@ const libraryContent = {
                 <tr className="hover:bg-gray-50 transition-colors">
                   <td className="p-3 text-gray-600">LL.B.</td>
                   <td className="p-3">
-<<<<<<< HEAD
                     <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-sm font-medium">3000</span>
-=======
-                    <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-sm font-medium">349</span>
->>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
                   </td>
                 </tr>
                 <tr className="hover:bg-gray-50 transition-colors">
                   <td className="p-3 text-gray-600">Donated Books</td>
                   <td className="p-3">
-<<<<<<< HEAD
                     <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm font-medium">1000</span>
-=======
-                    <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm font-medium">624</span>
->>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
                   </td>
                 </tr>
               </tbody>
@@ -197,7 +189,6 @@ const libraryContent = {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {[
-<<<<<<< HEAD
           { name: "Sakal", href: "https://www.esakal.com" },
           { name: "Sakal Times", href: "https://www.sakaaltimes.com" },
           { name: "Indian Express", href: "https://indianexpress.com" },
@@ -212,31 +203,18 @@ const libraryContent = {
             href={paper.href}
             target="_blank"
             rel="noopener noreferrer"
-=======
-          "Sakal", "Sakal Times", "Indian Express", "Loksatta", 
-          "Times of India", "Maharashtra Times", "Pudhari", "Lokmat"
-        ].map((paper, index) => (
-          <motion.div
-            key={index}
->>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: index * 0.1 }}
-            className="p-4 bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md hover:border-amber-200 transition-all group"
+            className="p-4 bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md hover:border-amber-200 transition-all group block"
           >
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center group-hover:bg-amber-200 transition-colors">
                 <span className="text-amber-600">📰</span>
               </div>
-<<<<<<< HEAD
               <span className="font-medium text-gray-700 group-hover:text-amber-700 transition-colors">{paper.name}</span>
             </div>
           </motion.a>
-=======
-              <span className="font-medium text-gray-700">{paper}</span>
-            </div>
-          </motion.div>
->>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
         ))}
       </div>
     </div>
@@ -251,7 +229,6 @@ const libraryContent = {
       <div className="grid md:grid-cols-2 gap-6">
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-gray-800 mb-4">Partner Libraries</h3>
-<<<<<<< HEAD
           {[
             { name: "Jaykar Library", href: "https://www.unipune.ac.in/jaykar_library.html" },
             { name: "British Library", href: "https://www.bl.uk" },
@@ -262,12 +239,6 @@ const libraryContent = {
               href={lib.href}
               target="_blank"
               rel="noopener noreferrer"
-=======
-          {["Jaykar Library", "British Library", "Gokhale Institute Library"].map((lib, index) => (
-            <motion.a
-              key={index}
-              href="#"
->>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.1 }}
@@ -277,11 +248,7 @@ const libraryContent = {
                 <span className="text-emerald-600">🏛️</span>
               </div>
               <span className="font-medium text-gray-700 group-hover:text-emerald-600 transition-colors">
-<<<<<<< HEAD
                 {lib.name}
-=======
-                {lib}
->>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
               </span>
             </motion.a>
           ))}
@@ -292,7 +259,6 @@ const libraryContent = {
           <div className="space-y-3">
             <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
               <span className="text-blue-500">📞</span>
-<<<<<<< HEAD
               <span className="text-gray-600">Phone: +91 84465 38995</span>
             </div>
             <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
@@ -302,17 +268,6 @@ const libraryContent = {
             <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
               <span className="text-purple-500">📍</span>
               <span className="text-gray-600">Location: Narhe Pune</span>
-=======
-              <span className="text-gray-600">Phone: [Library Phone]</span>
-            </div>
-            <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-              <span className="text-green-500">✉️</span>
-              <span className="text-gray-600">Email: [Library Email]</span>
-            </div>
-            <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-              <span className="text-purple-500">📍</span>
-              <span className="text-gray-600">Location: [Library Location]</span>
->>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
             </div>
           </div>
         </div>

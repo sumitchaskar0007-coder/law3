@@ -1,7 +1,12 @@
 import axios from 'axios';
 
+const DEFAULT_API_ORIGIN = 'https://api.jadhavarcollegeoflaw.com';
+
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
+  baseURL:
+    import.meta.env.VITE_API_URL ||
+    import.meta.env.VITE_API_BASE_URL ||
+    `${DEFAULT_API_ORIGIN}/api`,
   headers: { 'Content-Type': 'application/json' }
 });
 

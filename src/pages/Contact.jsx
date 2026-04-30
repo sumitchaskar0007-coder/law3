@@ -22,11 +22,7 @@ export default function Contact() {
           name="description"
           content="Get in touch with Jadhavar College of Law, Pune. Contact form, phone, email, and campus location."
         />
-<<<<<<< HEAD
-        <link rel="canonical" href="https://www.jadhavarcollegeoflaw.com/" />
-=======
-        <link rel="canonical" href="https://www.jadhavar-law.edu.in/contact" />
->>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
+
       </Helmet>
 
       <motion.h1 
@@ -47,17 +43,7 @@ export default function Contact() {
           className="rounded-2xl bg-white border p-6 shadow-lg space-y-4 hover:shadow-xl transition-shadow"
         >
           <h2 className="text-2xl font-semibold text-primary">Reach Us</h2>
-<<<<<<< HEAD
-        
-          <p className="text-sm">📍 <strong>Jadhavar College of Law:</strong> Narhe Pune</p>
-          <p className="text-sm">📞 Phone: +91 84465 38995</p>
-          <p className="text-sm">✉️ Email: jadhavarlawadmission@gmail.com</p>
-=======
-          <p className="text-sm">📍 <strong>Main Campus:</strong> Jadhavar College of Law, Pune — Near XYZ, Pune, Maharashtra, India.</p>
-          <p className="text-sm">📍 <strong>3 Years Law College:</strong> Jadhavar 3 Years Law College, Pune — ABC Road, Pune, Maharashtra, India.</p>
-          <p className="text-sm">📞 Phone: +91 9284246664</p>
-          <p className="text-sm">✉️ Email: adityajadhavarlaw@gmail.com</p>
->>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
+
           <div className="mt-4">
             <iframe
               title="College Location"

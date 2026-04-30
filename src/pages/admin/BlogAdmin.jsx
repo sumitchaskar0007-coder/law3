@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { blogAPI } from '../../api';
+import { blogAPI, getMediaUrl } from '../../api';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import RichTextEditor from '../../components/RichTextEditor';
@@ -122,9 +122,7 @@ export default function BlogAdmin() {
       content: blog.content,
       status: blog.status,
       coverImage: null,
-      currentImageUrl: blog.coverImage 
-        ? `${import.meta.env.VITE_API_URL || 'https://api.jadhavarcollegeoflaw.com'}${blog.coverImage}`
-        : '',
+      currentImageUrl: getMediaUrl(blog.coverImage),
       metaTitle: blog.metaTitle || blog.title,
       metaDescription: blog.metaDescription || blog.excerpt,
       slug: blog.slug || generateSlug(blog.title),
@@ -393,7 +391,7 @@ export default function BlogAdmin() {
                     <div className="flex items-center space-x-4">
                       {blog.coverImage && (
                         <img
-                          src={`${import.meta.env.VITE_API_URL || 'https://api.jadhavarcollegeoflaw.com'}${blog.coverImage}`}
+                          src={getMediaUrl(blog.coverImage)}
                           alt={blog.title}
                           className="w-20 h-20 object-cover rounded-lg"
                         />

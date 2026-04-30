@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import API from "../api";
 
 export default function AdmissionEnquirySection() {
   const [formData, setFormData] = useState({
@@ -23,7 +23,7 @@ export default function AdmissionEnquirySection() {
     setStatus("loading");
 
     try {
-      await axios.post("http://localhost:5000/api/enquiry", formData);
+      await API.post("/enquiry", formData);
       setStatus("success");
       setFormData({
         name: "",

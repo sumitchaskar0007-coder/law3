@@ -18,11 +18,7 @@ export default function GlimpseLawCollege() {
         
         {/* Heading */}
         <h2 className="text-2xl font-bold text-center mb-2">
-<<<<<<< HEAD
-          Highlights from Jadhavar College of Law
-=======
-          Glimpse @ Jadhavar Law College
->>>>>>> 8ded0d751d24b73f8b6ddd76fb48721f31f296fe
+
         </h2>
 
         <p className="text-center max-w-4xl mx-auto text-xs text-white/90 mb-8">
