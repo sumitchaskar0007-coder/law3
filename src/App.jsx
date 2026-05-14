@@ -32,6 +32,7 @@ import MootCourt from './pages/MootCourt.jsx';
 import Contact from './pages/Contact.jsx';
 import NotFound from './pages/NotFound.jsx';
 import Facilities from './pages/Facilities.jsx';
+import Udan from './pages/Udan.jsx';
 import UdanBook from "./pages/UdanBook";
 import Cells from './pages/Cells.jsx';
 
@@ -76,7 +77,7 @@ export default function App() {
 
             <Route path="/campus-life" element={<Facilities />} />
 
-
+            <Route path="/udan" element={<Udan />} />
             <Route path="/udan/:id" element={<UdanBook />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blogs/:id" element={<BlogDetail />} />
