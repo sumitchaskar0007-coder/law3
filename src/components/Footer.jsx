@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import {
   FaEnvelope,
   FaFacebookF,
+  FaGlobe,
   FaInstagram,
   FaLinkedinIn,
   FaMapMarkerAlt,
@@ -59,7 +60,12 @@ export default function Footer() {
             </li>
             <li>
               <Link to="/facilities" className="transition hover:text-primary">
-                Facilities
+                Facilities & Infrastructure
+              </Link>
+            </li>
+            <li>
+              <Link to="/student-achievements" className="transition hover:text-primary">
+                Student Achievements
               </Link>
             </li>
             <li>
@@ -91,6 +97,21 @@ export default function Footer() {
             <li>
               <Link to="/careers" className="transition hover:text-primary">
                 Careers
+              </Link>
+            </li>
+            <li>
+              <Link to="/collaboration-mou" className="transition hover:text-primary">
+                Collaboration (MoU)
+              </Link>
+            </li>
+            <li>
+              <Link to="/e-lectures" className="transition hover:text-primary">
+                E-Lecture
+              </Link>
+            </li>
+            <li>
+              <Link to="/governing-body" className="transition hover:text-primary">
+                Governing Body
               </Link>
             </li>
             <li>
@@ -161,9 +182,20 @@ export default function Footer() {
       <div className="border-t border-gray-800">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-4 text-xs text-gray-400 sm:flex-row">
           <p>(c) {new Date().getFullYear()} Trijja Media & Works, Pune. All rights reserved.</p>
-          <p>
-            Designed & Developed by <span className="font-semibold text-primary">Trijja Media & Works, Pune</span>
-          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <Link to="/sitemap" className="transition hover:text-primary">Sitemap</Link>
+            <a href="/sitemap.xml" className="transition hover:text-primary">XML Sitemap</a>
+            <a
+              href="https://iclapss.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 transition hover:text-primary"
+            >
+              <FaGlobe className="text-primary" />
+              <span>Designed & Developed by</span>
+              <span className="font-semibold text-primary">iclapss.com</span>
+            </a>
+          </div>
         </div>
       </div>
     </footer>

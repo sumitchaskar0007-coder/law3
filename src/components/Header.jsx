@@ -7,45 +7,51 @@ export default function Header() {
   const [dropdown, setDropdown] = React.useState(null);
 
   const navLink =
-    "px-5 py-4 font-semibold text-white hover:bg-blue-900 transition rounded-md";
+    "px-3 py-4 text-sm font-semibold text-white hover:bg-blue-900 transition rounded-md xl:px-4";
+
+  const udanLinks = [
+    { to: "/udan", label: "Udan Program" },
+    { to: "/udan/1", label: "Udan 1" },
+    { to: "/udan/2", label: "Udan 2" },
+    { to: "/udan/3", label: "Udan 3" },
+    { to: "/udan/4", label: "Udan 4" },
+    { to: "/udan/5", label: "Udan 5" },
+    { to: "/udan/6", label: "Udan 6" },
+    { to: "/udan/7", label: "Udan 7" },
+    { to: "/udan/8", label: "Udan 8" },
+  ];
 
   const menu = [
     { to: "/", label: "Home" },
     { to: "/about", label: "About Us" },
-    { to: "/cells", label: "Cells & Centres" },
+    { to: "/facilities", label: "Infrastructure" },
     {
-      label: "Admissions",
+      label: "Cells",
+      sub: [
+        { to: "/cells", label: "Cells & Centers" },
+        { to: "/moot", label: "Moot Court Society" },
+        { to: "/legalaid", label: "Legal Aid" },
+      ],
+    },
+    {
+      label: "Admission",
       sub: [
         { to: "/application", label: "Applications" },
         { to: "/academics", label: "Academics" },
       ],
     },
-    {
-      label: "Udan",
-      sub: [
-        { to: "/udan", label: "Udan Program" },
-        { to: "/udan/1", label: "Udan 1" },
-        { to: "/udan/2", label: "Udan 2" },
-        { to: "/udan/3", label: "Udan 3" },
-        { to: "/udan/4", label: "Udan 4" },
-        { to: "/udan/5", label: "Udan 5" },
-        { to: "/udan/6", label: "Udan 6" },
-        { to: "/udan/7", label: "Udan 7" },
-        { to: "/udan/8", label: "Udan 8" },
-      ],
-    },
+    { to: "/library", label: "Library" },
+    { to: "/gallery", label: "Gallery" },
     { to: "/announcement", label: "Announcements" },
+    { to: "/collaboration-mou", label: "MoU" },
+    { to: "/student-achievements", label: "Student Achievement" },
     {
       label: "More",
       sub: [
-        { to: "/facilities", label: "Facilities" },
-        { to: "/library", label: "Library" },
-        { to: "/gallery", label: "Gallery" },
-        { to: "/blog", label: "Blogs" },
-        { to: "/careers", label: "Career" },
+        { to: "/e-lectures", label: "E-Lecture" },
+        { to: "/governing-body", label: "Governing Body" },
       ],
     },
-    { to: "/contact", label: "Contact" },
   ];
 
   const handleDropdown = (label) => {
@@ -54,11 +60,11 @@ export default function Header() {
 
   return (
     <header className="w-full sticky top-0 z-50">
-      
+
       {/* ================= TOP BAR ================= */}
       <div className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-28">
-          
+
           <Link to="/" className="flex items-center gap-4">
             <img
               src="/assets/images/logo/logo1.png"
@@ -69,7 +75,7 @@ export default function Header() {
 
           <div className="text-center hidden md:block leading-tight">
             <p className="text-sm italic">
-              “Education for Strength, Intellect & Wisdom”
+              "Education for Strength, Intellect & Wisdom"
             </p>
             <h1 className="text-2xl font-bold text-blue-900 mt-1">
               Jadhavar College of Law
@@ -81,18 +87,54 @@ export default function Header() {
             </p>
           </div>
 
-          <div className="text-sm font-semibold text-blue-900 hidden md:block">
-            UDISE: 27250509921/27
+          <div className="hidden text-sm font-semibold text-blue-900 md:block">
+            <div>UDISE: 27250509921/27</div>
+            <div className="mt-2 flex justify-end gap-3 text-xs">
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={() => handleDropdown("Top Udan")}
+                  className="flex items-center gap-1 rounded-md bg-blue-50 px-3 py-1.5 text-blue-800 transition hover:bg-blue-100"
+                >
+                  Udan
+                  <ChevronDown
+                    className={`h-3.5 w-3.5 transition-transform ${dropdown === "Top Udan" ? "rotate-180" : ""
+                      }`}
+                  />
+                </button>
+
+                {dropdown === "Top Udan" && (
+                  <div className="absolute right-0 top-full z-50 mt-1 w-44 overflow-hidden rounded-md bg-white text-gray-800 shadow-xl ring-1 ring-black/5">
+                    {udanLinks.map((link) => (
+                      <NavLink
+                        key={link.to}
+                        to={link.to}
+                        onClick={() => setDropdown(null)}
+                        className="block px-4 py-2 text-sm hover:bg-blue-50"
+                      >
+                        {link.label}
+                      </NavLink>
+                    ))}
+                  </div>
+                )}
+              </div>
+              <Link
+                to="/contact"
+                className="rounded-md bg-blue-50 px-3 py-1.5 text-blue-800 transition hover:bg-blue-100"
+              >
+                Contact Us
+              </Link>
+            </div>
           </div>
         </div>
       </div>
 
       {/* ================= NAVBAR ================= */}
       <div className="bg-blue-950">
-        <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-center relative">
-          
+        <div className="max-w-7xl mx-auto px-4 min-h-16 py-2 flex items-center justify-center relative">
+
           {/* Desktop Menu */}
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden md:flex flex-wrap items-center justify-center gap-1">
             {menu.map((item, idx) =>
               item.sub ? (
                 <div key={idx} className="relative">
@@ -102,9 +144,8 @@ export default function Header() {
                   >
                     {item.label}
                     <ChevronDown
-                      className={`h-4 w-4 transition-transform ${
-                        dropdown === item.label ? "rotate-180" : ""
-                      }`}
+                      className={`h-4 w-4 transition-transform ${dropdown === item.label ? "rotate-180" : ""
+                        }`}
                     />
                   </button>
 

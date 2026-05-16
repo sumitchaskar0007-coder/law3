@@ -35,6 +35,19 @@ import Facilities from './pages/Facilities.jsx';
 import Udan from './pages/Udan.jsx';
 import UdanBook from "./pages/UdanBook";
 import Cells from './pages/Cells.jsx';
+import Sitemap from './pages/Sitemap.jsx';
+import GoverningBody from './pages/GoverningBody.jsx';
+import CollaborationMou from './pages/CollaborationMou.jsx';
+import ELectures from './pages/ELectures.jsx';
+import StudentAchievements from './pages/StudentAchievements.jsx';
+import Privacy from './pages/Privacy.jsx';
+import Terms from './pages/Terms.jsx';
+import Programmes from './pages/Programmes.jsx';
+import Events from './pages/Events.jsx';
+import News from './pages/News.jsx';
+import Placements from './pages/Placements.jsx';
+import Team from './pages/Team.jsx';
+import Testimonials from './pages/Testimonials.jsx';
 
 // Admin pages
 import AdminLogin from './pages/admin/AdminLogin.jsx';
@@ -64,16 +77,34 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/admissions" element={<Admission />} />
+            <Route path="/admission" element={<Admission />} />
             <Route path="/academics" element={<Academics />} />
+            <Route path="/programmes" element={<Programmes />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/placements" element={<Placements />} />
+            <Route path="/faculty" element={<Team />} />
+            <Route path="/team" element={<Team />} />
+            <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/announcement" element={<Announcement />} />
             <Route path="/careers" element={<Career />} />
             <Route path="/legalaid" element={<LegalAid />} />
             <Route path="/library" element={<Library />} />
             <Route path="/moot" element={<MootCourt />} />
+            <Route path="/moot-court" element={<MootCourt />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/cells" element={<Cells />} />
             <Route path="/facilities" element={<Facilities />} />
+            <Route path="/sitemap" element={<Sitemap />} />
+            <Route path="/governing-body" element={<GoverningBody />} />
+            <Route path="/collaboration-mou" element={<CollaborationMou />} />
+            <Route path="/e-lectures" element={<ELectures />} />
+            <Route path="/online-lectures" element={<ELectures />} />
+            <Route path="/student-achievements" element={<StudentAchievements />} />
+            <Route path="/student-achievement" element={<StudentAchievements />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
 
             <Route path="/campus-life" element={<Facilities />} />
 

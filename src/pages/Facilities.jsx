@@ -26,7 +26,11 @@ import {
   Video,
   Users2,
   Target,
-  Globe
+  Globe,
+  Laptop,
+  BookMarked,
+  Camera,
+  Eye
 } from 'lucide-react'
 
 export default function Facilities() {
@@ -36,7 +40,6 @@ export default function Facilities() {
       icon: <Building className="h-10 w-10" />,
       description: "State-of-the-art campus spread over 5 acres with modern architecture designed specifically for legal education. Eco-friendly construction with ample green spaces.",
       features: [
-        "5-acre sprawling campus",
         "Eco-friendly green building",
         "24/7 security surveillance",
         "Ample parking facilities",
@@ -86,7 +89,7 @@ export default function Facilities() {
       animationDelay: 0.3
     },
     {
-      title: "Classrooms",
+      title: "Smart Classrooms",
       icon: <Users className="h-10 w-10" />,
       description: "Smart classrooms with interactive whiteboards, audio-visual aids, comfortable seating, and optimal acoustics for effective teaching-learning process.",
       features: [
@@ -104,40 +107,76 @@ export default function Facilities() {
       animationDelay: 0.4
     },
     {
-      title: "Auditorium",
+      title: "Seminar Hall",
       icon: <Mic className="h-10 w-10" />,
-      description: "500-seater auditorium with professional lighting, sound systems, and stage facilities for seminars, conferences, and cultural events.",
+      description: "Well-equipped seminar hall with professional lighting, sound systems, and stage facilities for seminars, conferences, workshops, and cultural events.",
       features: [
-        "500 seating capacity",
-        "Dolby sound system",
+        "Spacious seating capacity",
+        "Quality sound system",
         "Professional lighting",
-        "Green rooms",
-        "Recording studio",
-        "VIP seating area"
+        "Guest lecture setup",
+        "Workshop-friendly layout",
+        "Presentation facilities"
       ],
-      stats: "500 Seater",
+      stats: "Seminars & Events",
       color: "from-red-600 to-rose-600",
       bgColor: "bg-gradient-to-br from-red-50 to-rose-50",
       borderColor: "border-red-200",
       animationDelay: 0.5
     },
     {
-      title: "Conference Hall",
-      icon: <Video className="h-10 w-10" />,
-      description: "Modern conference halls equipped with video conferencing facilities for national and international seminars, workshops, and guest lectures.",
+      title: "Computer Lab",
+      icon: <Laptop className="h-10 w-10" />,
+      description: "Computer lab supporting digital learning, legal research, online resources, document preparation, and academic technology access.",
       features: [
-        "Video conferencing",
-        "Simultaneous interpretation",
-        "Wireless presentation",
-        "Executive seating",
-        "Catering services",
-        "Business center"
+        "Internet-enabled systems",
+        "Online legal research support",
+        "Document drafting practice",
+        "Digital learning access",
+        "Academic technology support",
+        "Student computer access"
       ],
-      stats: "Video Conferencing",
+      stats: "Digital Learning",
       color: "from-indigo-600 to-violet-600",
       bgColor: "bg-gradient-to-br from-indigo-50 to-violet-50",
       borderColor: "border-indigo-200",
       animationDelay: 0.6
+    },
+    {
+      title: "Legal Aid Centre",
+      icon: <Scale className="h-10 w-10" />,
+      description: "Dedicated centre for legal aid, legal literacy, community outreach, and practical exposure to social justice initiatives.",
+      features: [
+        "Legal awareness activities",
+        "Community outreach support",
+        "Student legal aid participation",
+        "Client counselling exposure",
+        "Legal literacy drives",
+        "Social justice initiatives"
+      ],
+      stats: "Community Service",
+      color: "from-teal-600 to-cyan-600",
+      bgColor: "bg-gradient-to-br from-teal-50 to-cyan-50",
+      borderColor: "border-teal-200",
+      animationDelay: 0.65
+    },
+    {
+      title: "Reading Room",
+      icon: <BookMarked className="h-10 w-10" />,
+      description: "Quiet reading room designed for focused study, reference reading, exam preparation, and independent academic work.",
+      features: [
+        "Silent study environment",
+        "Reference reading space",
+        "Comfortable seating",
+        "Exam preparation support",
+        "Extended study access",
+        "Academic discipline"
+      ],
+      stats: "Focused Study",
+      color: "from-lime-600 to-green-600",
+      bgColor: "bg-gradient-to-br from-lime-50 to-green-50",
+      borderColor: "border-lime-200",
+      animationDelay: 0.68
     },
     {
       title: "Wi-Fi Campus",
@@ -158,25 +197,25 @@ export default function Facilities() {
       animationDelay: 0.7
     },
     {
-      title: "Hostel Facilities",
-      icon: <Home className="h-10 w-10" />,
-      description: "Separate hostel facilities for boys and girls with modern amenities, mess, recreational areas, and 24/7 security.",
+      title: "CCTV Security",
+      icon: <Eye className="h-10 w-10" />,
+      description: "Campus security system with CCTV surveillance and monitoring to support student safety and disciplined campus operations.",
       features: [
-        "AC & non-AC rooms",
-        "In-house mess",
-        "Common room with TV",
-        "Laundry services",
-        "Medical facilities",
-        "24/7 security"
+        "CCTV-monitored areas",
+        "Campus safety support",
+        "Entry and movement monitoring",
+        "Security coordination",
+        "Student safety focus",
+        "Disciplined environment"
       ],
-      stats: "Safe Accommodation",
+      stats: "Safe Campus",
       color: "from-teal-600 to-green-600",
       bgColor: "bg-gradient-to-br from-teal-50 to-green-50",
       borderColor: "border-teal-200",
       animationDelay: 0.8
     },
     {
-      title: "Sports & Gymnasium",
+      title: "Sports Facilities",
       icon: <Dumbbell className="h-10 w-10" />,
       description: "Well-equipped sports complex with indoor and outdoor facilities including gymnasium, basketball court, and yoga center.",
       features: [
@@ -194,9 +233,9 @@ export default function Facilities() {
       animationDelay: 0.9
     },
     {
-      title: "Canteen",
+      title: "Cafeteria",
       icon: <Coffee className="h-10 w-10" />,
-      description: "Hygienic and spacious canteen serving nutritious meals, snacks, and beverages at subsidized rates for students and staff.",
+      description: "Hygienic and spacious cafeteria serving nutritious meals, snacks, and beverages at student-friendly rates.",
       features: [
         "Hygienic kitchen",
         "Varied menu options",
@@ -210,6 +249,24 @@ export default function Facilities() {
       bgColor: "bg-gradient-to-br from-pink-50 to-rose-50",
       borderColor: "border-pink-200",
       animationDelay: 1.0
+    },
+    {
+      title: "Campus Photos",
+      icon: <Camera className="h-10 w-10" />,
+      description: "Visual glimpse of the campus, academic spaces, library, moot court environment, and student activity areas.",
+      features: [
+        "Campus view",
+        "Academic spaces",
+        "Activity areas",
+        "Infrastructure gallery",
+        "Student spaces",
+        "Photo updates"
+      ],
+      stats: "Photo Gallery",
+      color: "from-slate-600 to-blue-600",
+      bgColor: "bg-gradient-to-br from-slate-50 to-blue-50",
+      borderColor: "border-slate-200",
+      animationDelay: 1.1
     }
   ]
 
@@ -234,6 +291,13 @@ export default function Facilities() {
       title: "Student-Centric",
       description: "All facilities designed with student comfort and convenience in mind"
     }
+  ]
+
+  const campusPhotos = [
+    { src: "/assets/images/campus.png", title: "Campus View" },
+    { src: "/assets/images/law-campus.png", title: "Academic Campus" },
+    { src: "/assets/images/library.png", title: "Library" },
+    { src: "/assets/images/moot.png", title: "Moot Court Hall" }
   ]
 
   const fadeInUp = {
@@ -495,8 +559,49 @@ export default function Facilities() {
         </div>
       </section>
 
-      {/* Special Features Section */}
+      {/* Campus Photos Section */}
       <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                Campus <span className="text-blue-600">Photos</span>
+              </h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                A quick look at the college infrastructure and learning spaces.
+              </p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {campusPhotos.map((photo, index) => (
+                <motion.div
+                  key={photo.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="group overflow-hidden rounded-xl border border-gray-200 bg-white shadow-lg"
+                >
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img
+                      src={photo.src}
+                      alt={photo.title}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <h3 className="font-bold text-gray-900">{photo.title}</h3>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Special Features Section */}
+      <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">

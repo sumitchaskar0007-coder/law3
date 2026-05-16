@@ -182,6 +182,27 @@ export default function Cells() {
       animationDelay: 0.7
     },
     {
+      title: "Examination Center",
+      icon: <GraduationCap className="h-10 w-10" />,
+      description: "Coordinates examination-related support, university communication, seating arrangements, student guidance, and smooth conduct of internal and university examinations.",
+      objectives: [
+        "Support transparent examination processes",
+        "Coordinate examination notices and schedules",
+        "Guide students on examination requirements",
+        "Maintain examination discipline and records"
+      ],
+      activities: [
+        "Exam form and timetable updates",
+        "Hall ticket and seating assistance",
+        "Internal assessment coordination",
+        "University exam communication"
+      ],
+      color: "from-sky-600 to-blue-800",
+      bgColor: "bg-sky-50",
+      borderColor: "border-sky-200",
+      animationDelay: 0.75
+    },
+    {
       title: "Grievance Redressal Cell",
       icon: <AlertCircle className="h-10 w-10" />,
       description: "Provides a transparent mechanism for students and staff to voice concerns and ensures timely resolution of grievances.",

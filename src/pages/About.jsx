@@ -115,7 +115,7 @@ export default function About() {
       icon: <GraduationCap className="h-8 w-8" />,
       content:
         'Our faculty comprises experienced legal practitioners and academicians who provide personalized attention. We emphasize moot court training, legal aid clinics, and internships to ensure holistic development.',
-      author: 'Dr. Sapna Sukrut Dev',
+      author: 'Dr. Sapna Sukrut Deo',
       color: 'bg-gradient-to-br from-purple-500 to-purple-700'
     }
   ]
