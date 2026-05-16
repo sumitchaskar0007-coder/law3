@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { galleryAPI } from '../api';
+import { galleryFallbackItems } from '../data/galleryFallback';
 
 const Gallery = () => {
   const [items, setItems] = useState([]);
@@ -11,16 +11,8 @@ const Gallery = () => {
   }, []);
 
   const fetchItems = async () => {
-    try {
-      const response = await galleryAPI.getAll();
-
-      // IMPORTANT: backend returns Cloudinary URLs in `image`
-      setItems(response.data.data || []);
-    } catch (error) {
-      console.error('Error fetching gallery items:', error);
-    } finally {
-      setLoading(false);
-    }
+    setItems(galleryFallbackItems);
+    setLoading(false);
   };
 
   // Extract unique categories

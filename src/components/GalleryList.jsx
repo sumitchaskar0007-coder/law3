@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { galleryAPI, getMediaUrl } from "../api";
+import { galleryFallbackItems } from "../data/galleryFallback";
 
 const GalleryList = () => {
   const [gallery, setGallery] = useState([]);
 
   useEffect(() => {
-    galleryAPI.getAll()
-      .then(res => setGallery(res.data?.data || res.data || []))
-      .catch(() => setGallery([]));
+    setGallery(galleryFallbackItems);
   }, []);
 
   return (
@@ -15,7 +13,7 @@ const GalleryList = () => {
       {gallery.map((g) => (
         <img
           key={g._id}
-          src={getMediaUrl(g.image)}
+          src={g.image}
           alt={g.title || "Gallery item"}
           width="150"
         />

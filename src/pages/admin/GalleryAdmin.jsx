@@ -32,6 +32,8 @@ const GalleryAdmin = () => {
     isActive: true
   });
   const [previewImage, setPreviewImage] = useState(null);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
   useEffect(() => {
     fetchItems();
@@ -62,17 +64,33 @@ const GalleryAdmin = () => {
 
   const fetchItems = async () => {
     try {
+      setErrorMessage('');
       const response = await galleryAPI.getAllAdmin();
       setItems(response.data.data);
     } catch (error) {
       console.error('Error fetching gallery items:', error);
+      setErrorMessage(getFriendlyApiError(error, 'Could not load gallery images.'));
     } finally {
       setLoading(false);
     }
   };
 
+  const getFriendlyApiError = (error, fallback) => {
+    if (!error.response) {
+      return 'Could not connect to the server. Please check the API server, internet connection, or try a smaller image.';
+    }
+
+    return (
+      error.response?.data?.error ||
+      error.response?.data?.message ||
+      fallback
+    );
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrorMessage('');
+    setSuccessMessage('');
 
     const data = new FormData();
     data.append('title', formData.title);
@@ -89,9 +107,11 @@ const GalleryAdmin = () => {
       }
       setShowModal(false);
       resetForm();
+      setSuccessMessage(`Gallery image ${editingItem ? 'updated' : 'uploaded'} successfully.`);
       fetchItems();
     } catch (err) {
       console.error('Error saving item:', err);
+      setErrorMessage(getFriendlyApiError(err, 'Could not save gallery image.'));
     }
   };
 
@@ -111,28 +131,43 @@ const GalleryAdmin = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this item? This action cannot be undone.')) {
       try {
+        setErrorMessage('');
+        setSuccessMessage('');
         await galleryAPI.delete(id);
+        setSuccessMessage('Gallery image deleted successfully.');
         fetchItems();
       } catch (error) {
         console.error('Error deleting item:', error);
+        setErrorMessage(getFriendlyApiError(error, 'Could not delete gallery image.'));
       }
     }
   };
 
   const toggleStatus = async (id, currentStatus) => {
     try {
+      setErrorMessage('');
+      setSuccessMessage('');
       const data = new FormData();
       data.append('isActive', !currentStatus);
       await galleryAPI.update(id, data);
+      setSuccessMessage('Gallery image status updated successfully.');
       fetchItems();
     } catch (error) {
       console.error('Error updating status:', error);
+      setErrorMessage(getFriendlyApiError(error, 'Could not update gallery status.'));
     }
   };
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
+      setErrorMessage('');
+      if (file.size > 5 * 1024 * 1024) {
+        setErrorMessage('Please upload an image smaller than 5 MB.');
+        e.target.value = '';
+        return;
+      }
+
       setFormData({ ...formData, image: file });
       const reader = new FileReader();
       reader.onloadend = () => {
@@ -191,6 +226,20 @@ const GalleryAdmin = () => {
             Add New Image
           </button>
         </div>
+
+        {errorMessage && (
+          <div className="mb-4 flex items-start gap-3 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+            <AlertCircle className="mt-0.5 h-5 w-5 flex-shrink-0" />
+            <span>{errorMessage}</span>
+          </div>
+        )}
+
+        {successMessage && (
+          <div className="mb-4 flex items-start gap-3 rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-700">
+            <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0" />
+            <span>{successMessage}</span>
+          </div>
+        )}
 
         {/* Search and Filter Bar */}
         <div className="bg-white rounded-xl shadow-sm p-4 mb-6">
@@ -429,7 +478,7 @@ const GalleryAdmin = () => {
                               />
                             </label>
                             <p className="text-xs text-gray-500 mt-1">
-                              PNG, JPG, GIF up to 10MB
+                              PNG, JPG, GIF up to 5MB
                             </p>
                           </div>
                         </div>
