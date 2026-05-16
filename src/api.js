@@ -60,6 +60,8 @@ API.interceptors.response.use(
   (error) => {
     // Network error
     if (!error.response) {
+      console.error('Network error:', error.message);
+      alert('Network error. Please check your internet connection.');
       return Promise.reject(error);
     }
 
