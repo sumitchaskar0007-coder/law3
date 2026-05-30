@@ -10,8 +10,10 @@ import {
   Landmark,
   FileText,
   Gavel,
-  GraduationCap
+  GraduationCap,
+  Download
 } from "lucide-react";
+import { udanBooks } from "../data/udanBooks";
 
 const udanPrograms = [
   {
@@ -136,12 +138,22 @@ export default function Udan() {
                   {udan.description}
                 </p>
 
-                <Link
-                  to={`/udan/${udan.id}`}
-                  className="text-sm font-semibold text-blue-700 hover:underline"
-                >
-                  View Details →
-                </Link>
+                <div className="flex flex-wrap items-center gap-3">
+                  <Link
+                    to={`/udan/${udan.id}`}
+                    className="text-sm font-semibold text-blue-700 hover:underline"
+                  >
+                    View Details →
+                  </Link>
+                  <a
+                    href={udanBooks[udan.id]?.pdf || '#'}
+                    download
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:underline"
+                  >
+                    <Download size={16} />
+                    Download PDF
+                  </a>
+                </div>
               </motion.div>
             ))}
           </div>
