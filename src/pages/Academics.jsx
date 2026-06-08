@@ -8,7 +8,8 @@ import {
   Landmark,
   Briefcase,
   FileText,
-  Users
+  Users,
+  IndianRupee
 } from "lucide-react";
 
 const academicsData = [
@@ -53,6 +54,13 @@ const academicsData = [
     icon: <Users />,
     description:
       "Regular seminars, workshops, guest lectures, and training programs are organized to enhance professional skills, legal awareness, and career readiness."
+  },
+  {
+    title: "Fee Structure",
+    icon: <IndianRupee />,
+    description:
+      "View the approved fee structure for the academic program at Jadhavar College of Law.",
+    href: "/assets/pdf/feesstructure.pdf"
   }
 ];
 
@@ -100,7 +108,7 @@ export default function Academics() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {academicsData.map((item, index) => (
               <motion.div
-                key={index}
+                key={item.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -120,6 +128,17 @@ export default function Academics() {
                 <p className="text-gray-600 text-sm leading-relaxed">
                   {item.description}
                 </p>
+
+                {item.href && (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 inline-flex items-center rounded-lg bg-blue-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-800"
+                  >
+                    View Fee Structure
+                  </a>
+                )}
               </motion.div>
             ))}
           </div>

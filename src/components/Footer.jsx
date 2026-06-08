@@ -78,6 +78,16 @@ export default function Footer() {
                 Gallery
               </Link>
             </li>
+            <li>
+              <a
+                href="/assets/pdf/feesstructure.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition hover:text-primary"
+              >
+                Fee Structure
+              </a>
+            </li>
           </ul>
         </div>
 
