@@ -104,6 +104,46 @@ export default function Academics() {
             </p>
           </motion.div>
 
+          {/* FEE SUMMARY */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="mb-12 overflow-hidden rounded-2xl border border-blue-100 bg-white shadow-md"
+          >
+            <div className="bg-blue-700 px-6 py-4 text-white">
+              <h2 className="text-2xl font-bold">Fee Structure</h2>
+              <p className="mt-1 text-sm text-blue-100">
+                Bachelor of Law - 3 Years (L.L.B.- III)
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 divide-y divide-gray-100 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+              <div className="p-5 text-center">
+                <p className="text-sm font-medium text-gray-500">Tuition Fee</p>
+                <p className="mt-1 text-xl font-bold text-gray-900">
+                  ₹31,818/-
+                </p>
+              </div>
+              <div className="p-5 text-center">
+                <p className="text-sm font-medium text-gray-500">
+                  Development Fee
+                </p>
+                <p className="mt-1 text-xl font-bold text-gray-900">
+                  ₹3,182/-
+                </p>
+              </div>
+              <div className="p-5 text-center">
+                <p className="text-sm font-medium text-gray-500">
+                  Total Annual Fee
+                </p>
+                <p className="mt-1 text-xl font-bold text-blue-700">
+                  ₹35,000/-
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
           {/* ACADEMICS CARDS */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {academicsData.map((item, index) => (
