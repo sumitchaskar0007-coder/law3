@@ -48,7 +48,7 @@ import News from './pages/News.jsx';
 import Placements from './pages/Placements.jsx';
 import Team from './pages/Team.jsx';
 import Testimonials from './pages/Testimonials.jsx';
-
+import Internship from './pages/Internship.jsx';
 // Admin pages
 import AdminLogin from './pages/admin/AdminLogin.jsx';
 import AdminDashboard from './pages/admin/AdminDashboard.jsx';
@@ -105,7 +105,7 @@ export default function App() {
             <Route path="/student-achievement" element={<StudentAchievements />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
-
+            <Route path="/internship" element={<Internship />} />
             <Route path="/campus-life" element={<Facilities />} />
 
             <Route path="/udan" element={<Udan />} />

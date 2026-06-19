@@ -7,7 +7,7 @@ export default function Header() {
   const [dropdown, setDropdown] = React.useState(null);
 
   const navLink =
-    "px-3 py-4 text-sm font-semibold text-white hover:bg-blue-900 transition rounded-md xl:px-4";
+    "px-2 py-3 text-xs lg:text-sm font-semibold text-white hover:bg-blue-900 transition rounded-md whitespace-nowrap";
 
   const udanLinks = [
     { to: "/udan", label: "Udan Program" },
@@ -41,6 +41,7 @@ export default function Header() {
       ],
     },
     { to: "/library", label: "Library" },
+    { to: "/internship", label: "Placement" },
     { to: "/gallery", label: "Gallery" },
     { to: "/announcement", label: "Announcements" },
     { to: "/collaboration-mou", label: "MoU" },
@@ -131,10 +132,10 @@ export default function Header() {
 
       {/* ================= NAVBAR ================= */}
       <div className="bg-blue-950">
-        <div className="max-w-7xl mx-auto px-4 min-h-16 py-2 flex items-center justify-center relative">
+        <div className="max-w-7xl mx-auto px-2 md:px-4 min-h-14 py-1 flex items-center justify-center relative">
 
           {/* Desktop Menu */}
-          <nav className="hidden md:flex flex-wrap items-center justify-center gap-1">
+          <nav className="hidden md:flex flex-wrap items-center justify-center gap-x-0.5 gap-y-1">
             {menu.map((item, idx) =>
               item.sub ? (
                 <div key={idx} className="relative">
@@ -144,13 +145,13 @@ export default function Header() {
                   >
                     {item.label}
                     <ChevronDown
-                      className={`h-4 w-4 transition-transform ${dropdown === item.label ? "rotate-180" : ""
+                      className={`h-3.5 w-3.5 transition-transform ${dropdown === item.label ? "rotate-180" : ""
                         }`}
                     />
                   </button>
 
                   {dropdown === item.label && (
-                    <div className="absolute left-1/2 -translate-x-1/2 top-full mt-1 w-48 bg-white text-gray-800 shadow-xl rounded-md overflow-hidden">
+                    <div className="absolute left-1/2 -translate-x-1/2 top-full mt-1 w-48 bg-white text-gray-800 shadow-xl rounded-md overflow-hidden z-50">
                       {item.sub.map((s) => (
                         <NavLink
                           key={s.to}
@@ -180,7 +181,7 @@ export default function Header() {
 
           {/* Mobile Toggle */}
           <button
-            className="md:hidden absolute right-4 text-white"
+            className="md:hidden absolute right-2 text-white"
             onClick={() => setOpen(!open)}
           >
             {open ? <X /> : <Menu />}

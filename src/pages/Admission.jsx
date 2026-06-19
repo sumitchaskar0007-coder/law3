@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
-import { 
-  Calendar, 
-  Download, 
-  FileText, 
-  Award, 
-  Clock, 
-  CheckCircle, 
+import {
+  Calendar,
+  Download,
+  FileText,
+  Award,
+  Clock,
+  CheckCircle,
   Users,
   BookOpen,
   DollarSign,
@@ -62,14 +62,14 @@ const EnquiryModal = ({ isOpen, onClose, onSubmit, type }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
+
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1500))
-    
+
     onSubmit(formData)
     setIsSubmitted(true)
     setIsSubmitting(false)
-    
+
     // Reset form after successful submission
     setFormData({
       firstName: '',
@@ -119,7 +119,7 @@ const EnquiryModal = ({ isOpen, onClose, onSubmit, type }) => {
               Thank You for Your {formType === 'admission' ? 'Application' : 'Enquiry'}!
             </h3>
             <p className="text-gray-600 mb-6">
-              {formType === 'admission' 
+              {formType === 'admission'
                 ? 'Your application has been successfully submitted. Our admission team will review your details and contact you within 2-3 working days.'
                 : 'Your enquiry has been received. Our team will get back to you within 24 hours.'
               }
@@ -156,7 +156,7 @@ const EnquiryModal = ({ isOpen, onClose, onSubmit, type }) => {
               {formType === 'admission' ? 'Apply Now - 3-Year LL.B Program' : 'Admission Enquiry'}
             </h3>
             <p className="text-gray-600 mt-1">
-              {formType === 'admission' 
+              {formType === 'admission'
                 ? 'Fill out the application form for 2026 admissions'
                 : 'Get detailed information about our LL.B program'
               }
@@ -175,21 +175,19 @@ const EnquiryModal = ({ isOpen, onClose, onSubmit, type }) => {
           <div className="flex">
             <button
               onClick={() => handleSwitchForm('enquiry')}
-              className={`flex-1 py-4 text-center font-medium transition-colors ${
-                formType === 'enquiry'
-                  ? 'text-blue-600 border-b-2 border-blue-600'
-                  : 'text-gray-500 hover:text-gray-700'
-              }`}
+              className={`flex-1 py-4 text-center font-medium transition-colors ${formType === 'enquiry'
+                ? 'text-blue-600 border-b-2 border-blue-600'
+                : 'text-gray-500 hover:text-gray-700'
+                }`}
             >
               Quick Enquiry
             </button>
             <button
               onClick={() => handleSwitchForm('admission')}
-              className={`flex-1 py-4 text-center font-medium transition-colors ${
-                formType === 'admission'
-                  ? 'text-blue-600 border-b-2 border-blue-600'
-                  : 'text-gray-500 hover:text-gray-700'
-              }`}
+              className={`flex-1 py-4 text-center font-medium transition-colors ${formType === 'admission'
+                ? 'text-blue-600 border-b-2 border-blue-600'
+                : 'text-gray-500 hover:text-gray-700'
+                }`}
             >
               Full Application
             </button>
@@ -201,7 +199,7 @@ const EnquiryModal = ({ isOpen, onClose, onSubmit, type }) => {
             {/* Personal Information */}
             <div className="space-y-4">
               <h4 className="font-semibold text-gray-900">Personal Information</h4>
-              
+
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -302,7 +300,7 @@ const EnquiryModal = ({ isOpen, onClose, onSubmit, type }) => {
             {/* Academic Information */}
             <div className="space-y-4">
               <h4 className="font-semibold text-gray-900">Academic Information</h4>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Course Interested *
@@ -350,8 +348,9 @@ const EnquiryModal = ({ isOpen, onClose, onSubmit, type }) => {
                       <option value="">Select qualification</option>
                       <option value="BA">Bachelor of Arts (BA)</option>
                       <option value="BSc">Bachelor of Science (BSc)</option>
-                      <option value="BCom">Bachelor of Commerce (BCom)</option>
-                      <option value="BBA">Bachelor of Business Administration (BBA)</option>
+                      <option value="BA LLB">Bachelor of Arts and Bachelor of Law (BA LLB)</option>
+                      {/* <option value="BCom">Bachelor of Commerce (BCom)</option>
+                      <option value="BBA">Bachelor of Business Administration (BBA)</option> */}
                       <option value="Engineering">Engineering</option>
                       <option value="Other">Other</option>
                     </select>
@@ -738,7 +737,7 @@ export default function Admissions() {
       </Helmet>
 
       {/* Enquiry Modal */}
-      <EnquiryModal 
+      <EnquiryModal
         isOpen={showEnquiryModal}
         onClose={handleCloseModal}
         onSubmit={handleSubmitEnquiry}
@@ -753,7 +752,7 @@ export default function Admissions() {
               <Award className="h-4 w-4" />
               <span className="text-sm font-medium">Bar Council of India Approved</span>
             </div>
-            
+
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               3-Year <span className="text-yellow-300">LL.B Admissions 2026</span>
             </h1>
@@ -761,13 +760,13 @@ export default function Admissions() {
               Start Your Legal Career at Jadhavar Law College, Pune
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button 
+              <button
                 onClick={handleApplyNowClick}
                 className="bg-white text-blue-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg"
               >
                 Apply Now
               </button>
-              <button 
+              <button
                 onClick={() => window.open('/assets/prospectus.pdf', '_blank')}
                 className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-blue-900 transition-all transform hover:scale-105"
               >
@@ -784,7 +783,7 @@ export default function Admissions() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
             {admissionCards.map((card, index) => (
-              <div 
+              <div
                 key={index}
                 className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 group hover:transform hover:-translate-y-2 overflow-hidden"
               >
@@ -800,7 +799,7 @@ export default function Admissions() {
                 </div>
                 <div className="p-6">
                   <p className="text-gray-600 mb-6 leading-relaxed">{card.description}</p>
-                  <button 
+                  <button
                     onClick={card.onClick}
                     className="w-full bg-gray-900 text-white py-3 rounded-xl font-semibold hover:bg-gray-800 transition-all flex items-center justify-center gap-2 group/btn"
                   >
@@ -818,7 +817,7 @@ export default function Admissions() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div 
+            <div
               className="bg-white border border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-all cursor-pointer"
               onClick={() => toggleSection('admissionProcess')}
             >
@@ -829,7 +828,7 @@ export default function Admissions() {
                 </div>
                 {openSections.admissionProcess ? <ChevronUp className="h-6 w-6" /> : <ChevronDown className="h-6 w-6" />}
               </div>
-              
+
               {openSections.admissionProcess && (
                 <div className="px-6 pb-6">
                   <div className="mb-8">
@@ -897,7 +896,7 @@ export default function Admissions() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div 
+            <div
               className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all cursor-pointer"
               onClick={() => toggleSection('documentsRequired')}
             >
@@ -908,7 +907,7 @@ export default function Admissions() {
                 </div>
                 {openSections.documentsRequired ? <ChevronUp className="h-6 w-6" /> : <ChevronDown className="h-6 w-6" />}
               </div>
-              
+
               {openSections.documentsRequired && (
                 <div className="px-6 pb-6">
                   <div className="grid md:grid-cols-2 gap-6">
@@ -969,7 +968,7 @@ export default function Admissions() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div 
+            <div
               className="bg-white border border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-all cursor-pointer"
               onClick={() => toggleSection('feeStructure')}
             >
@@ -980,7 +979,7 @@ export default function Admissions() {
                 </div>
                 {openSections.feeStructure ? <ChevronUp className="h-6 w-6" /> : <ChevronDown className="h-6 w-6" />}
               </div>
-              
+
               {openSections.feeStructure && (
                 <div className="px-6 pb-6">
                   <div className="bg-green-50 border border-green-200 rounded-xl p-6 mb-6">
@@ -1044,7 +1043,7 @@ export default function Admissions() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div 
+            <div
               className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all cursor-pointer"
               onClick={() => toggleSection('scholarships')}
             >
@@ -1055,7 +1054,7 @@ export default function Admissions() {
                 </div>
                 {openSections.scholarships ? <ChevronUp className="h-6 w-6" /> : <ChevronDown className="h-6 w-6" />}
               </div>
-              
+
               {openSections.scholarships && (
                 <div className="px-6 pb-6">
                   <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -1098,7 +1097,7 @@ export default function Admissions() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div 
+            <div
               className="bg-white border border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-all cursor-pointer"
               onClick={() => toggleSection('rules')}
             >
@@ -1109,7 +1108,7 @@ export default function Admissions() {
                 </div>
                 {openSections.rules ? <ChevronUp className="h-6 w-6" /> : <ChevronDown className="h-6 w-6" />}
               </div>
-              
+
               {openSections.rules && (
                 <div className="px-6 pb-6">
                   <div className="grid md:grid-cols-3 gap-6">
@@ -1168,24 +1167,24 @@ export default function Admissions() {
             Begin Your Legal Journey with Us
           </h2>
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Join Jadhavar Law College's 3-Year LL.B Program and build a strong foundation for your legal career. 
+            Join Jadhavar Law College's 3-Year LL.B Program and build a strong foundation for your legal career.
             Limited seats available for 2026 batch.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button 
+            <button
               onClick={handleApplyNowClick}
               className="bg-white text-blue-900 px-10 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg"
             >
               Apply for Admission
             </button>
-            <button 
+            <button
               onClick={() => window.open('/assets/prospectus.pdf', '_blank')}
               className="border-2 border-white text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-blue-900 transition-all transform hover:scale-105"
             >
               Download Complete Prospectus
             </button>
           </div>
-          
+
           <div className="mt-12 grid md:grid-cols-3 gap-8 text-left max-w-4xl mx-auto">
             <div className="flex items-center gap-4">
               <Phone className="h-8 w-8 text-yellow-300" />

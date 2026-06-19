@@ -596,6 +596,20 @@ export default function Facilities() {
                 </motion.div>
               ))}
             </div>
+
+            <div className="mt-10 text-center">
+              <motion.a
+                href="https://www.instagram.com/jadhavar_law?igsh=MWZwM3N3Z3Iybzlzag%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center justify-center rounded-full bg-blue-600 px-6 py-3 font-semibold text-white shadow-lg transition-colors duration-300 hover:bg-blue-700"
+              >
+                More
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </motion.a>
+            </div>
           </div>
         </div>
       </section>
