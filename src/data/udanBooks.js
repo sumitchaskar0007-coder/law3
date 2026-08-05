@@ -3,7 +3,6 @@ export const udanBooks = {
     title: "Udan 1 – Introduction to Law",
     cover: "/assets/books/udan.png",
     pdf: "/assets/books/Udan1.pdf",
-
     description:
       "This book introduces basic legal concepts, legal systems, and the foundation of law for beginners."
   },
@@ -11,7 +10,6 @@ export const udanBooks = {
     title: "Udan 2 – Constitutional Values",
     cover: "/assets/books/udan.png",
     pdf: "/assets/books/Udan2.pdf",
-
     description:
       "Focuses on the Indian Constitution, fundamental rights, duties, and democratic principles."
   },
@@ -19,7 +17,6 @@ export const udanBooks = {
     title: "Udan 3 – Legal Awareness & Society",
     cover: "/assets/books/udan.png",
     pdf: "/assets/books/Udan3.pdf",
-
     description:
       "Promotes legal literacy, social justice, and awareness of laws affecting citizens."
   },
@@ -27,7 +24,6 @@ export const udanBooks = {
     title: "Udan 4 – Advocacy Skills",
     cover: "/assets/books/udan.png",
     pdf: "/assets/books/Udan4.pdf",
-
     description:
       "Develops advocacy skills, court manners, drafting, and professional ethics."
   },
@@ -35,7 +31,6 @@ export const udanBooks = {
     title: "Udan 5 – Judicial System",
     cover: "/assets/books/udan.png",
     pdf: "/assets/books/Udan5.pdf",
-
     description:
       "Explains structure and functioning of courts and judicial institutions in India."
   },
@@ -43,7 +38,6 @@ export const udanBooks = {
     title: "Udan 6 – Legal Drafting",
     cover: "/assets/books/udan.png",
     pdf: "/assets/books/Udan6.pdf",
-
     description:
       "Covers drafting of notices, pleadings, applications, and legal documents."
   },
@@ -51,7 +45,6 @@ export const udanBooks = {
     title: "Udan 7 – Moot Court Practice",
     cover: "/assets/books/udan.png",
     pdf: "/assets/books/Udan7.pdf",
-
     description:
       "Practical training through moot courts, mock trials, and oral arguments."
   },
@@ -59,8 +52,15 @@ export const udanBooks = {
     title: "Udan 8 – Professional Ethics",
     cover: "/assets/books/udan.png",
     pdf: "/assets/books/Udan8.pdf",
-
     description:
       "Focuses on ethics, professionalism, leadership, and career readiness in law."
+  },
+  // Add Udan 9
+  9: {
+    title: "Udan 9 – Advanced Legal Research",
+    cover: "/assets/books/udan.png",
+    pdf: "/assets/books/Udan9.pdf",
+    description:
+      "Advanced legal research methodologies, case analysis, and scholarly writing skills."
   }
 };
