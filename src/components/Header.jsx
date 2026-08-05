@@ -52,6 +52,8 @@ export default function Header() {
       label: "More",
       sub: [
         { to: "/e-lectures", label: "E-Lecture" },
+                { to: "/blog", label: "Blogs" },
+
         { to: "/governing-body", label: "Governing Body" },
       ],
     },
