@@ -53,6 +53,7 @@ export default function Header() {
       sub: [
         { to: "/e-lectures", label: "E-Lecture" },
                 { to: "/blog", label: "Blogs" },
+        { href: "/assets/pdf/merit.pdf", label: "Merit List" },
 
         { to: "/governing-body", label: "Governing Body" },
       ],
@@ -157,14 +158,27 @@ export default function Header() {
                   {dropdown === item.label && (
                     <div className="absolute left-1/2 -translate-x-1/2 top-full mt-1 w-48 bg-white text-gray-800 shadow-xl rounded-md overflow-hidden z-50">
                       {item.sub.map((s) => (
-                        <NavLink
-                          key={s.to}
-                          to={s.to}
-                          onClick={() => setDropdown(null)}
-                          className="block px-4 py-2 hover:bg-blue-50 text-sm"
-                        >
-                          {s.label}
-                        </NavLink>
+                        s.href ? (
+                          <a
+                            key={s.href}
+                            href={s.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={() => setDropdown(null)}
+                            className="block px-4 py-2 hover:bg-blue-50 text-sm"
+                          >
+                            {s.label}
+                          </a>
+                        ) : (
+                          <NavLink
+                            key={s.to}
+                            to={s.to}
+                            onClick={() => setDropdown(null)}
+                            className="block px-4 py-2 hover:bg-blue-50 text-sm"
+                          >
+                            {s.label}
+                          </NavLink>
+                        )
                       ))}
                     </div>
                   )}
@@ -196,14 +210,27 @@ export default function Header() {
         {open && (
           <div className="md:hidden bg-blue-950 px-4 pb-4">
             {menu.flatMap((m) => (m.sub ? m.sub : [m])).map((item) => (
-              <NavLink
-                key={item.to}
-                to={item.to}
-                onClick={() => setOpen(false)}
-                className="block py-3 text-white border-b border-blue-900"
-              >
-                {item.label}
-              </NavLink>
+              item.href ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                  className="block py-3 text-white border-b border-blue-900"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  onClick={() => setOpen(false)}
+                  className="block py-3 text-white border-b border-blue-900"
+                >
+                  {item.label}
+                </NavLink>
+              )
             ))}
           </div>
         )}
