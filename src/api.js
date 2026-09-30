@@ -6,7 +6,8 @@ import axios from 'axios';
 |-------------------------------------------------------------------------- 
 */
 
-const DEFAULT_API_ORIGIN = 'https://api.jadhavarcollegeoflaw.com';
+const isLocalDev = typeof window !== 'undefined' && ['localhost', '127.0.0.1'].includes(window.location.hostname);
+const DEFAULT_API_ORIGIN = isLocalDev ? 'http://localhost:5000' : 'https://api.jadhavarcollegeoflaw.com';
 
 export const API_URL = (
   import.meta.env.VITE_API_URL ||
@@ -143,6 +144,26 @@ export const galleryAPI = {
     }),
   delete: (id) => API.delete(`/gallery/${id}`),
   getAllAdmin: () => API.get('/gallery/admin/all'),
+};
+
+/*
+|--------------------------------------------------------------------------
+| MERIT LIST API
+|--------------------------------------------------------------------------
+*/
+export const meritListAPI = {
+  getAll: () => API.get('/merit-list'),
+  getById: (id) => API.get(`/merit-list/${id}`),
+  create: (formData) =>
+    API.post('/merit-list', formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    }),
+  update: (id, formData) =>
+    API.put(`/merit-list/${id}`, formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    }),
+  delete: (id) => API.delete(`/merit-list/${id}`),
+  getAllAdmin: () => API.get('/merit-list/admin/all'),
 };
 
 /*

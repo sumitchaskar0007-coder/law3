@@ -182,7 +182,7 @@ const AdminDashboard = () => {
           /* Overview Tab Content */
           <>
             {/* MANAGEMENT CARDS */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
               {/* Gallery */}
               <Link
                 to="/admin/gallery"
@@ -190,6 +190,15 @@ const AdminDashboard = () => {
               >
                 <h2 className="text-xl font-bold mb-4">Gallery Management</h2>
                 <p className="text-gray-600">Manage gallery images and categories</p>
+              </Link>
+
+              {/* Merit List */}
+              <Link
+                to="/admin/merit-list"
+                className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition"
+              >
+                <h2 className="text-xl font-bold mb-4">Merit List</h2>
+                <p className="text-gray-600">Upload, update and remove merit list PDFs</p>
               </Link>
 
               {/* Announcements */}

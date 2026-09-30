@@ -26,6 +26,7 @@ import Academics from './pages/Academics.jsx';
 import Gallery from './pages/Gallery.jsx';
 import Announcement from './pages/Announcement.jsx';
 import Career from './pages/Career.jsx';
+import MeritList from './pages/MeritList.jsx';
 import LegalAid from './pages/LegalAid.jsx';
 import Library from './pages/Library.jsx';
 import MootCourt from './pages/MootCourt.jsx';
@@ -53,6 +54,7 @@ import Internship from './pages/Internship.jsx';
 import AdminLogin from './pages/admin/AdminLogin.jsx';
 import AdminDashboard from './pages/admin/AdminDashboard.jsx';
 import GalleryAdmin from './pages/admin/GalleryAdmin.jsx';
+import MeritListAdmin from './pages/admin/MeritListAdmin.jsx';
 import AnnouncementAdmin from './pages/admin/AnnouncementAdmin.jsx';
 import CareerAdmin from './pages/admin/CareerAdmin.jsx';
 
@@ -89,6 +91,7 @@ export default function App() {
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/announcement" element={<Announcement />} />
             <Route path="/careers" element={<Career />} />
+            <Route path="/merit-list" element={<MeritList />} />
             <Route path="/legalaid" element={<LegalAid />} />
             <Route path="/library" element={<Library />} />
             <Route path="/moot" element={<MootCourt />} />
@@ -131,6 +134,15 @@ export default function App() {
               element={
                 <ProtectedRoute>
                   <GalleryAdmin />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/admin/merit-list"
+              element={
+                <ProtectedRoute>
+                  <MeritListAdmin />
                 </ProtectedRoute>
               }
             />

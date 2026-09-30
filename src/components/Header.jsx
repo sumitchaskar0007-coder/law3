@@ -53,7 +53,7 @@ export default function Header() {
       sub: [
         { to: "/e-lectures", label: "E-Lecture" },
                 { to: "/blog", label: "Blogs" },
-        { href: "/assets/pdf/merit.pdf", label: "Merit List" },
+{ to: "/merit-list", label: "Merit List" },
 
         { to: "/governing-body", label: "Governing Body" },
       ],
