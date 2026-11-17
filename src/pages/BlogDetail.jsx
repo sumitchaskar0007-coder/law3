@@ -180,7 +180,7 @@ export default function BlogDetail() {
               <div>
                 <p className="font-medium text-gray-900">{blog.author || 'Admin'}</p>
                 <div className="flex items-center space-x-2 text-sm">
-                  <span>{new Date(blog.createdAt).toLocaleDateString('en-US', { 
+                  <span>{new Date(blog.postedAt || blog.createdAt).toLocaleDateString('en-US', {
                     year: 'numeric', 
                     month: 'long', 
                     day: 'numeric' 

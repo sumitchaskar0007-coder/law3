@@ -4,6 +4,16 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import RichTextEditor from '../../components/RichTextEditor';
 
+const toDateInputValue = (value = new Date()) => {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return '';
+
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+};
+
 export default function BlogAdmin() {
   const [blogs, setBlogs] = useState([]);
   const [editingId, setEditingId] = useState(null);
@@ -14,6 +24,7 @@ export default function BlogAdmin() {
     excerpt: '',
     content: '',
     status: 'published',
+    postedAt: toDateInputValue(),
     coverImage: null,
     currentImageUrl: '',
     metaTitle: '',
@@ -88,6 +99,7 @@ export default function BlogAdmin() {
     formData.append('excerpt', form.excerpt);
     formData.append('content', form.content);
     formData.append('status', form.status);
+    formData.append('postedAt', form.postedAt);
     formData.append('metaTitle', form.metaTitle || form.title);
     formData.append('metaDescription', form.metaDescription || form.excerpt);
     formData.append('slug', form.slug || generateSlug(form.title));
@@ -121,6 +133,7 @@ export default function BlogAdmin() {
       excerpt: blog.excerpt,
       content: blog.content,
       status: blog.status,
+      postedAt: toDateInputValue(blog.postedAt || blog.createdAt),
       coverImage: null,
       currentImageUrl: getMediaUrl(blog.coverImage),
       metaTitle: blog.metaTitle || blog.title,
@@ -155,6 +168,7 @@ export default function BlogAdmin() {
       excerpt: '',
       content: '',
       status: 'published',
+      postedAt: toDateInputValue(),
       coverImage: null,
       currentImageUrl: '',
       metaTitle: '',
@@ -283,7 +297,7 @@ export default function BlogAdmin() {
               </div>
             </div>
 
-            {/* Status and Image */}
+            {/* Status, Posted Date, and Image */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -298,6 +312,20 @@ export default function BlogAdmin() {
                   <option value="published">Published</option>
                   <option value="draft">Draft</option>
                 </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Posted on
+                </label>
+                <input
+                  type="date"
+                  name="postedAt"
+                  className="border border-gray-300 rounded-lg p-3 w-full"
+                  value={form.postedAt}
+                  onChange={handleFormChange}
+                  required
+                />
               </div>
 
               <div>
@@ -410,7 +438,7 @@ export default function BlogAdmin() {
                         <p className="text-gray-600 mt-1 line-clamp-2">{blog.excerpt}</p>
                         <div className="flex items-center space-x-4 mt-2">
                           <span className="text-sm text-gray-500">
-                            {new Date(blog.createdAt).toLocaleDateString()}
+                            Posted on {new Date(blog.postedAt || blog.createdAt).toLocaleDateString()}
                           </span>
                           <span className="text-sm text-gray-500">
                             Slug: /blog/{blog.slug || blog._id}
