@@ -181,15 +181,21 @@ const AdminDashboard = () => {
         {activeTab === 'overview' ? (
           /* Overview Tab Content */
           <>
+            <div className="mb-6 rounded-lg border border-indigo-100 bg-indigo-50 p-5">
+              <h2 className="text-lg font-semibold text-indigo-900">Add or edit website content</h2>
+              <p className="mt-1 text-sm text-indigo-800">
+                Choose a section below to add new items, edit existing information, or remove content from the website.
+              </p>
+            </div>
             {/* MANAGEMENT CARDS */}
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
               {/* Gallery */}
               <Link
                 to="/admin/gallery"
                 className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition"
               >
-                <h2 className="text-xl font-bold mb-4">Gallery Management</h2>
-                <p className="text-gray-600">Manage gallery images and categories</p>
+                <h2 className="text-xl font-bold mb-4">Gallery</h2>
+                <p className="text-gray-600">Add, edit, publish, or remove gallery images and categories.</p>
               </Link>
 
               {/* Merit List */}
@@ -198,7 +204,7 @@ const AdminDashboard = () => {
                 className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition"
               >
                 <h2 className="text-xl font-bold mb-4">Merit List</h2>
-                <p className="text-gray-600">Upload, update and remove merit list PDFs</p>
+                <p className="text-gray-600">Add, edit, or remove merit list PDFs.</p>
               </Link>
 
               {/* Announcements */}
@@ -207,7 +213,7 @@ const AdminDashboard = () => {
                 className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition"
               >
                 <h2 className="text-xl font-bold mb-4">Announcements</h2>
-                <p className="text-gray-600">Create and manage announcements</p>
+                <p className="text-gray-600">Add, edit, or remove website announcements.</p>
               </Link>
 
               {/* Careers */}
@@ -216,7 +222,7 @@ const AdminDashboard = () => {
                 className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition"
               >
                 <h2 className="text-xl font-bold mb-4">Careers</h2>
-                <p className="text-gray-600">Manage job openings and applications</p>
+                <p className="text-gray-600">Add, edit, or remove career openings.</p>
               </Link>
 
               {/* Blog Management */}
@@ -225,7 +231,7 @@ const AdminDashboard = () => {
                 className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition border-2 border-blue-500"
               >
                 <h2 className="text-xl font-bold mb-4">Blog Management</h2>
-                <p className="text-gray-600">Create, edit and publish blog posts</p>
+                <p className="text-gray-600">Add, edit, publish, or remove blog posts.</p>
               </Link>
             </div>
 

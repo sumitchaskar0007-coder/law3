@@ -195,6 +195,7 @@ export default function Footer() {
           <div className="flex flex-wrap items-center justify-center gap-3">
             <Link to="/sitemap" className="transition hover:text-primary">Sitemap</Link>
             <a href="/sitemap.xml" className="transition hover:text-primary">XML Sitemap</a>
+            <Link to="/admin/login" className="transition hover:text-primary">Admin Login</Link>
             <a
               href="https://iclapss.com"
               target="_blank"
