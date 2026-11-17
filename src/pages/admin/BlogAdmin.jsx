@@ -438,9 +438,6 @@ export default function BlogAdmin() {
                         <p className="text-gray-600 mt-1 line-clamp-2">{blog.excerpt}</p>
                         <div className="flex items-center space-x-4 mt-2">
                           <span className="text-sm text-gray-500">
-                            Posted on {new Date(blog.postedAt || blog.createdAt).toLocaleDateString()}
-                          </span>
-                          <span className="text-sm text-gray-500">
                             Slug: /blog/{blog.slug || blog._id}
                           </span>
                         </div>

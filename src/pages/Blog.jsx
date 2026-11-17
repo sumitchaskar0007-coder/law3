@@ -72,12 +72,6 @@ export default function Blog() {
                 {/* Content */}
                 <div className="p-6">
                   <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">
-                    <span>{new Date(blog.postedAt || blog.createdAt).toLocaleDateString('en-US', {
-                      month: 'short', 
-                      day: 'numeric',
-                      year: 'numeric'
-                    })}</span>
-                    <span>•</span>
                     <span>{blog.author || 'Admin'}</span>
                   </div>
                   
