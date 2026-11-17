@@ -2,6 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { announcementAPI } from '../../api';
 
+const toDateInputValue = (value = new Date()) => {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return '';
+
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+};
+
 const AnnouncementAdmin = () => {
   const [announcements, setAnnouncements] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -12,6 +22,7 @@ const AnnouncementAdmin = () => {
     content: '',
     type: 'general',
     isActive: true,
+    postedAt: toDateInputValue(),
     startDate: new Date().toISOString().split('T')[0],
     endDate: ''
   });
@@ -67,6 +78,7 @@ const AnnouncementAdmin = () => {
       content: announcement.content,
       type: announcement.type,
       isActive: announcement.isActive,
+      postedAt: toDateInputValue(announcement.postedAt || announcement.createdAt),
       startDate: new Date(announcement.startDate).toISOString().split('T')[0],
       endDate: announcement.endDate 
         ? new Date(announcement.endDate).toISOString().split('T')[0]
@@ -92,6 +104,7 @@ const AnnouncementAdmin = () => {
       content: '',
       type: 'general',
       isActive: true,
+      postedAt: toDateInputValue(),
       startDate: new Date().toISOString().split('T')[0],
       endDate: ''
     });
@@ -129,6 +142,7 @@ const AnnouncementAdmin = () => {
                 <th className="px-6 py-3 text-left">Title</th>
                 <th className="px-6 py-3 text-left">Type</th>
                 <th className="px-6 py-3 text-left">Status</th>
+                <th className="px-6 py-3 text-left">Posted Date</th>
                 <th className="px-6 py-3 text-left">Start Date</th>
                 <th className="px-6 py-3 text-left">Actions</th>
               </tr>
@@ -154,6 +168,9 @@ const AnnouncementAdmin = () => {
                     }`}>
                       {announcement.isActive ? 'Active' : 'Inactive'}
                     </span>
+                  </td>
+                  <td className="px-6 py-4">
+                    {new Date(announcement.postedAt || announcement.createdAt).toLocaleDateString()}
                   </td>
                   <td className="px-6 py-4">
                     {new Date(announcement.startDate).toLocaleDateString()}
@@ -223,7 +240,18 @@ const AnnouncementAdmin = () => {
                     <option value="event">Event</option>
                   </select>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium">Posted Date</label>
+                    <input
+                      type="date"
+                      name="postedAt"
+                      required
+                      className="mt-1 block w-full border rounded-md px-3 py-2"
+                      value={formData.postedAt}
+                      onChange={handleInputChange}
+                    />
+                  </div>
                   <div>
                     <label className="block text-sm font-medium">Start Date</label>
                     <input

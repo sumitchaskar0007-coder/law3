@@ -108,9 +108,6 @@ const Announcement = () => {
                       <span className={`px-2 py-1 rounded text-sm ${getTypeBadgeClass(announcement.type)}`}>
                         {announcement.type}
                       </span>
-                      <span className="text-gray-500 text-sm">
-                        Posted: {formatDate(announcement.createdAt)}
-                      </span>
                     </div>
                   </div>
                 </div>
