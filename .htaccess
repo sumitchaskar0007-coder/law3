@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # The production build is stored in /dist. Serve it for the homepage and
+  # client-side routes while leaving real files (images, PDFs, and assets) alone.
+  RewriteRule ^dist/ - [L]
+  RewriteRule ^$ dist/index.html [L]
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+  RewriteRule ^ dist/index.html [L]
+</IfModule>
